@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Word Riddle Solver.iml" filepath="$PROJECT_DIR$/Word Riddle Solver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Word Ladder.iml" filepath="$PROJECT_DIR$/Word Ladder.iml" />
     </modules>
   </component>
 </project>
