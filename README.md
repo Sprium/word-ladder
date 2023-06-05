@@ -1,1 +1,2 @@
-# word-riddle-solver
+# word-ladder
+התוכנה הזאת פותרת חידות מסוג "סולם מילים"
