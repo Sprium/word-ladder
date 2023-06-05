@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class WordGenerator {
@@ -12,19 +13,21 @@ public class WordGenerator {
     }
 
     public static void main(String[] args) {
-        WordGenerator wordGenerator = new WordGenerator("C:\\Users\\יאיר\\Desktop\\database.txt");
+        WordGenerator wordGenerator = new WordGenerator("database.txt");
 
         String word = wordGenerator.getLargestKnownWord();
 
         List<String> options = wordGenerator.generateWords(word);
         if (options.isEmpty()) {
-            System.out.println("No options found.");
+            System.out.println("אין תוצאות.");
         } else {
-            System.out.println("Options:");
+            System.out.println("תוצאות:");
             for (String option : options) {
                 System.out.println(option);
             }
         }
+
+        openCmdTerminal();
     }
 
     private void readWordsFromFile(String filePath) {
@@ -40,13 +43,13 @@ public class WordGenerator {
 
 
         } catch (IOException e) {
-            System.out.println("Error reading the word database file: " + e.getMessage());
+            System.out.println("שגיאה בניסיון קריאה של קובץ המילים: " + e.getMessage());
         }
     }
 
     public String getLargestKnownWord() {
         // Prompt the user to enter the known words
-        System.out.print("Enter the largest word you already know: ");
+        System.out.print("רשום את המילה עם הכי הרבה אותיות שכבר מצאת: ");
         Scanner scanner = new Scanner(System.in);
         String knownWord = scanner.nextLine();
         String normalizedWord = knownWord.replaceAll("[^א-ת]", "");
@@ -115,5 +118,30 @@ public class WordGenerator {
         char temp = letters[i];
         letters[i] = letters[j];
         letters[j] = temp;
+    }
+
+    private static void openCmdTerminal() {
+        try {
+            String osName = System.getProperty("os.name").toLowerCase();
+            ProcessBuilder builder;
+            if (osName.contains("win")) {
+                builder = new ProcessBuilder("cmd.exe");
+            } else if (osName.contains("nix") || osName.contains("nux") || osName.contains("mac")) {
+                builder = new ProcessBuilder("x-terminal-emulator", "-e", "bash", "-c", "exec bash");
+            } else {
+                System.err.println("Unsupported operating system.");
+                return;
+            }
+            builder.redirectErrorStream(true);
+            Process process = builder.start();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            process.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

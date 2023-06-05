@@ -40,6 +40,6 @@ class TrieNode {
         else if (c >= 'א' && c <= 'ת')
             return c - 'א' + 2;
         else
-            throw new IllegalArgumentException("Unsupported character: " + c);
+            throw new IllegalArgumentException("סימנים שלא נתמכים: " + c);
     }
 }

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Word Riddle Solver:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="07e6b5b9-28b2-47ee-bdd2-c865fc73a8f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Word Riddle Solver.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TriedNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WordGenerator.java" afterDir="false" />
+    <list default="true" id="07e6b5b9-28b2-47ee-bdd2-c865fc73a8f7" name="Changes" comment="Version 1.0">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Word_Riddle_Solver_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TriedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TriedNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +43,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15103735",
+    "project.structure.side.proportion": "0.2551402"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\יאיר\projects\Word Riddle Solver" />
       <recent name="C:\Users\יאיר\projects\Word Riddle Solver\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -61,6 +67,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685907715505</updated>
     </task>
+    <task id="LOCAL-00001" summary="Version 1.0">
+      <created>1685916616787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685916616787</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,6 +87,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
