@@ -1,23 +1,22 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
-public class WordGenerator {
+public class Main {
     private final TrieNode trie;
 
-    public WordGenerator(String filePath) {
+    public Main(String filePath) {
         trie = new TrieNode();
         readWordsFromFile(filePath);
     }
 
     public static void main(String[] args) {
-        WordGenerator wordGenerator = new WordGenerator("database.txt");
+        Main main = new Main("database.txt");
 
-        String word = wordGenerator.getLargestKnownWord();
+        String word = main.getWord();
 
-        List<String> options = wordGenerator.generateWords(word);
+        List<String> options = main.generateWords(word);
         if (options.isEmpty()) {
             System.out.println("אין תוצאות.");
         } else {
@@ -26,8 +25,6 @@ public class WordGenerator {
                 System.out.println(option);
             }
         }
-
-        openCmdTerminal();
     }
 
     private void readWordsFromFile(String filePath) {
@@ -47,7 +44,7 @@ public class WordGenerator {
         }
     }
 
-    public String getLargestKnownWord() {
+    public String getWord() {
         // Prompt the user to enter the known words
         System.out.print("רשום את המילה עם הכי הרבה אותיות שכבר מצאת: ");
         Scanner scanner = new Scanner(System.in);
@@ -118,30 +115,5 @@ public class WordGenerator {
         char temp = letters[i];
         letters[i] = letters[j];
         letters[j] = temp;
-    }
-
-    private static void openCmdTerminal() {
-        try {
-            String osName = System.getProperty("os.name").toLowerCase();
-            ProcessBuilder builder;
-            if (osName.contains("win")) {
-                builder = new ProcessBuilder("cmd.exe");
-            } else if (osName.contains("nix") || osName.contains("nux") || osName.contains("mac")) {
-                builder = new ProcessBuilder("x-terminal-emulator", "-e", "bash", "-c", "exec bash");
-            } else {
-                System.err.println("Unsupported operating system.");
-                return;
-            }
-            builder.redirectErrorStream(true);
-            Process process = builder.start();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-            process.waitFor();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

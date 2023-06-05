@@ -1,5 +1,5 @@
-class TrieNode {
-    private static final int ALPHABET_SIZE = 29; // 27 characters in the Hebrew alphabet
+public class TrieNode {
+    private static final int ALPHABET_SIZE = 29;
     private final TrieNode[] children;
     private boolean isEndOfWord;
 

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Word Riddle Solver:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Word_Riddle_Solver_jar</output-path>
-    <root id="archive" name="Word Riddle Solver.jar">
-      <element id="module-output" name="Word Riddle Solver" />
-    </root>
-  </artifact>
-</component>
